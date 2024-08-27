@@ -1,16 +1,16 @@
 name: "Vprofile IAC"
 on:
-    push:
-        branches:
-            - main
-            - stage
-        paths:    
-            - terraform/**
-    pull_request:
-        branches:
-            - main
-        paths:
-            - terraform/**
+  push:
+    branches:
+      - main
+      - stage
+    paths:
+      - terraform/**
+  pull_request:
+      branches:
+        - main
+      paths:
+      - terraform/**
 
 env:
  # Credentials for deployment to AWS
@@ -22,7 +22,7 @@ env:
  EKS_CLUSTER: vprofile-eks
 
 jobs:
-      terraform:
+    terraform:
           name: "Apply terraform code changes"
           runs-on: ubuntu-latest
           defaults:
